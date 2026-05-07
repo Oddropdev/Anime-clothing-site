@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anime Clothing — Anime Hoodies, Streetwear & Official Merch</title>
+  <meta name="description" content="Find anime clothing without the endless scrolling. Curated anime hoodies, anime streetwear, tees, accessories and official anime merch from trusted stores." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root {
+      --bg: #090910;
+      --panel: #12121d;
+      --panel-2: #1a1428;
+      --text: #f7f4ff;
+      --muted: #c7c2d5;
+      --soft: #918aa4;
+      --line: rgba(255,255,255,.12);
+      --accent: #ff42d7;
+      --accent-2: #7b55ff;
+      --accent-3: #8fffd2;
+      --warning: #ffd37a;
+      --shadow: 0 24px 80px rgba(0,0,0,.45);
+      --radius: 24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255,66,215,.18), transparent 30%),
+        radial-gradient(circle at 85% 8%, rgba(123,85,255,.22), transparent 28%),
+        linear-gradient(180deg, #090910 0%, #11111d 46%, #08080e 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(9,9,16,.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -.045em;
+      font-size: 23px;
+      white-space: nowrap;
+    }
+
+    .mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 14px 34px rgba(255,66,215,.28);
+      font-weight: 950;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-weight: 850;
+      box-shadow: 0 16px 38px rgba(123,85,255,.25);
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .hero {
+      padding: 76px 0 54px;
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      margin-bottom: 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: var(--accent-3);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-3);
+      box-shadow: 0 0 18px rgba(143,255,210,.8);
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .94;
+      letter-spacing: -.078em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #ffd7f7 48%, #b4a8ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.62;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .disclosure {
+      max-width: 660px;
+      margin: 0;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 480px;
+    }
+
+    .glow {
+      position: absolute;
+      inset: 32px 0 auto 0;
+      height: 340px;
+      border-radius: 48px;
+      background: linear-gradient(135deg, rgba(255,66,215,.22), rgba(123,85,255,.2));
+      filter: blur(4px);
+      transform: rotate(-2deg);
+    }
+
+    .product-card {
+      position: relative;
+      width: min(430px, 100%);
+      margin: 28px auto 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+      transform: rotate(-1.5deg);
+    }
+
+    .product-img {
+      height: 268px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 30% 18%, rgba(255,255,255,.33), transparent 18%),
+        radial-gradient(circle at 70% 20%, rgba(255,66,215,.32), transparent 18%),
+        linear-gradient(135deg, #2d2147, #111827 50%, #4b1644);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img:before {
+      content: "";
+      position: absolute;
+      width: 188px;
+      height: 244px;
+      border-radius: 86px 86px 24px 24px;
+      left: 50%;
+      top: 43%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(180deg, #222235, #050508);
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,.05);
+    }
+
+    .product-img:after {
+      content: "ANIME\A CLOTHING";
+      white-space: pre;
+      position: absolute;
+      inset: auto 20px 24px 20px;
+      text-align: center;
+      font-weight: 950;
+      letter-spacing: .14em;
+      color: rgba(255,255,255,.86);
+      font-size: 18px;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 17px 4px 2px;
+    }
+
+    .product-meta h3 {
+      margin: 0 0 7px;
+      font-size: 21px;
+      letter-spacing: -.04em;
+    }
+
+    .product-meta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .pill {
+      color: #08110d;
+      background: var(--accent-3);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    section { padding: 56px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 50px);
+      line-height: 1;
+      letter-spacing: -.065em;
+    }
+
+    .section-head p {
+      max-width: 500px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tile {
+      min-height: 166px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.055);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .tile:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.085);
+      border-color: rgba(255,255,255,.2);
+    }
+
+    .tile h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -.04em;
+    }
+
+    .tile p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tile span {
+      color: var(--accent-3);
+      font-size: 13px;
+      font-weight: 900;
+      margin-top: 20px;
+    }
+
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.055);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.085);
+    }
+
+    .thumb {
+      height: 172px;
+      background: linear-gradient(135deg, rgba(255,66,215,.34), rgba(123,85,255,.24)), #191929;
+      position: relative;
+    }
+
+    .thumb:after {
+      content: "";
+      position: absolute;
+      inset: 26px 44px 0;
+      border-radius: 40px 40px 12px 12px;
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .item-body { padding: 16px; }
+
+    .item h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -.035em;
+    }
+
+    .item p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .link {
+      color: var(--accent-3);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .note {
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(143,255,210,.08), transparent 36%),
+        rgba(255,255,255,.052);
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .note strong { color: var(--text); }
+
+    .email-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      max-width: 640px;
+      margin-top: 22px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+    }
+
+    input {
+      width: 100%;
+      padding: 0 16px;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+    }
+
+    input::placeholder { color: #85859a; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--soft);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 52px;
+      }
+      .visual { min-height: 390px; }
+      .grid, .featured { grid-template-columns: 1fr 1fr; }
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .grid, .featured { grid-template-columns: 1fr; }
+      .email-box {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+      }
+      .email-box .button { width: 100%; }
+      .product-img { height: 232px; }
+      .brand { font-size: 21px; }
+      .nav { min-height: 68px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Anime Clothing home">
+        <span class="mark">ア</span>
+        <span>anime.clothing</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="anime-hoodies.html">Categories</a>
+        <a href="starter-picks.html">Editor picks</a>
+        <a href="official-merch.html">Official merch</a>
+        <a href="drops.html">Drops</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Curated anime clothing</div>
+        <h1><span class="gradient-text">Find anime clothing</span><br />without the endless scrolling.</h1>
+        <p class="lead">
+          Curated anime hoodies, streetwear, tees, accessories and official merch from trusted stores. Built for fans who want wearable anime style without digging through random marketplace chaos.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="starter-picks.html">Browse starter picks</a>
+          <a class="button secondary" href="official-merch.html">Find official merch</a>
+        </div>
+
+        <p class="disclosure">
+          Disclosure: Anime.clothing may earn a commission when you buy through links on this site. We aim to feature official, licensed and anime-inspired products from reputable stores.
+        </p>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="product-card">
+          <div class="product-img"></div>
+          <div class="product-meta">
+            <div>
+              <h3>Anime hoodies, tees & streetwear</h3>
+              <p>Start with curated categories, then add affiliate products later.</p>
+            </div>
+            <span class="pill">Starter build</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="wrap">
+      <div class="section-head">
+        <h2>Shop by category.</h2>
+        <p>Each card links to a real future file. Build these pages later and keep the URL structure clean from day one.</p>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="anime-hoodies.html">
+          <div>
+            <h3>Anime Hoodies</h3>
+            <p>Oversized, minimal, graphic and official anime hoodies.</p>
+          </div>
+          <span>Open anime-hoodies.html →</span>
+        </a>
+
+        <a class="tile" href="anime-streetwear.html">
+          <div>
+            <h3>Anime Streetwear</h3>
+            <p>Wearable manga aesthetics, cyberpunk fits and subtle fan style.</p>
+          </div>
+          <span>Open anime-streetwear.html →</span>
+        </a>
+
+        <a class="tile" href="official-merch.html">
+          <div>
+            <h3>Official Merch</h3>
+            <p>Licensed apparel and accessories from official or verified stores.</p>
+          </div>
+          <span>Open official-merch.html →</span>
+        </a>
+
+        <a class="tile" href="anime-tees.html">
+          <div>
+            <h3>Anime Tees</h3>
+            <p>Graphic shirts, minimal logos and everyday anime-inspired tees.</p>
+          </div>
+          <span>Open anime-tees.html →</span>
+        </a>
+
+        <a class="tile" href="anime-streetwear.html">
+          <div>
+            <h3>Cosplay-Inspired Fits</h3>
+            <p>Outfits inspired by anime silhouettes, not counterfeit costumes.</p>
+          </div>
+          <span>Open anime-streetwear.html →</span>
+        </a>
+
+        <a class="tile" href="anime-accessories.html">
+          <div>
+            <h3>Accessories</h3>
+            <p>Bags, caps, socks, jewelry and small details for anime fans.</p>
+          </div>
+          <span>Open anime-accessories.html →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="picks" class="wrap">
+      <div class="section-head">
+        <h2>Starter picks.</h2>
+        <p>These cards currently route to category pages. Replace them with direct affiliate deep links after approval.</p>
+      </div>
+
+      <div class="featured">
+        <a class="item" href="anime-hoodies.html">
+          <div class="thumb"></div>
+          <div class="item-body">
+            <h3>Subtle Anime Hoodie</h3>
+            <p>Best for fans who want anime style without loud graphics.</p>
+            <span class="link">View hoodies →</span>
+          </div>
+        </a>
+
+        <a class="item" href="anime-tees.html">
+          <div class="thumb"></div>
+          <div class="item-body">
+            <h3>Graphic Manga Tee</h3>
+            <p>A strong pick for casual outfits and convention weekends.</p>
+            <span class="link">View tees →</span>
+          </div>
+        </a>
+
+        <a class="item" href="anime-streetwear.html">
+          <div class="thumb"></div>
+          <div class="item-body">
+            <h3>Cyberpunk Jacket</h3>
+            <p>For techwear, neon city and futuristic anime aesthetics.</p>
+            <span class="link">View streetwear →</span>
+          </div>
+        </a>
+
+        <a class="item" href="official-merch.html">
+          <div class="thumb"></div>
+          <div class="item-body">
+            <h3>Official Store Pick</h3>
+            <p>Use this slot for licensed merch from a verified retailer.</p>
+            <span class="link">Shop official →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="official" class="wrap">
+      <div class="section-head">
+        <h2>Official first. Inspired second.</h2>
+        <p>Anime fashion has major IP risk. Keep the site clean by separating licensed merch from anime-inspired streetwear.</p>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="official-merch.html">
+          <div>
+            <h3>Official / Licensed</h3>
+            <p>Products sold by official stores or licensed retailers.</p>
+          </div>
+          <span>Open official-merch.html →</span>
+        </a>
+
+        <a class="tile" href="anime-streetwear.html">
+          <div>
+            <h3>Anime-Inspired</h3>
+            <p>Original designs using aesthetics, not protected characters or logos.</p>
+          </div>
+          <span>Open anime-streetwear.html →</span>
+        </a>
+
+        <a class="tile" href="store-reviews.html">
+          <div>
+            <h3>Store Reviews</h3>
+            <p>Rank stores by shipping, licensing, style, quality and return policy.</p>
+          </div>
+          <span>Open store-reviews.html →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="newsletter" class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Get anime clothing drops.</h2>
+          <p style="margin-top:14px;color:var(--muted);max-width:650px;line-height:1.55;">
+            Add an email list early. It makes the site more valuable even before revenue is meaningful.
+          </p>
+
+          <form class="email-box" action="drops.html" method="get">
+            <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" />
+            <button class="button" type="submit">Notify me</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Build later:</strong> connect this form to MailerLite, ConvertKit, Beehiiv or another email tool. For now it safely routes to <strong>drops.html</strong>.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Anime.clothing. Curated anime-inspired apparel and official merch links. Anime.clothing may earn commissions from qualifying purchases.
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
